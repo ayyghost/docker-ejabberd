@@ -14,6 +14,9 @@ RUN git checkout ${VERSION/latest/HEAD} \
  && mix deps.get \
  && (cd deps/eimp; ./configure)
 
+# Cryptodog patch: disable MUC room owners
+RUN sed -i 's/State = set_affiliation(Creator, owner,/State = set_affiliation(Creator, none,/' src/mod_muc_room.erl
+
 # Compile
 RUN mix do compile, distillery.init, distillery.release --env=prod
 
