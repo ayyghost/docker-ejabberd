@@ -145,7 +145,6 @@ modules:
     max_users_presence: 100
     max_room_id: 32
     max_room_name: 32
-    max_room_desc: 0
     min_message_interval: 0.200
     min_presence_interval: 0.5
     default_room_options:
